@@ -160,8 +160,7 @@ button:active {
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 14px;
+  padding: 12px;
 }
 
 .hud-top {
@@ -170,6 +169,7 @@ button:active {
   align-items: center;
   gap: 10px;
   pointer-events: auto;
+  margin-bottom: auto; /* Mendorong subtitle & tombol rapat ke paling bawah */
 }
 
 .status-pill {
@@ -257,29 +257,29 @@ button:active {
   background: #ffeb3b;
   color: #1f2937;
   font-weight: 900;
-  font-size: 1.15rem;
-  padding: 10px 20px;
+  font-size: 1rem;
+  padding: 8px 16px;
   border-radius: 999px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  margin-bottom: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  margin-bottom: 8px;
 }
 
 /* SUBTITLE PANEL (FR-08) */
 .subtitle-panel {
   pointer-events: auto;
-  background: rgba(17, 24, 39, 0.88);
+  background: rgba(17, 24, 39, 0.85);
   color: #fff;
-  border: 3px solid #ffca28;
-  border-radius: 20px;
-  padding: 14px 18px;
-  margin-bottom: 12px;
+  border: 2px solid #ffca28;
+  border-radius: 16px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
   text-align: center;
 }
 
 .subtitle-panel p {
   margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.45;
+  font-size: 0.95rem;
+  line-height: 1.4;
   font-weight: 700;
 }
 
@@ -288,7 +288,7 @@ button:active {
   pointer-events: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 8px;
 }
 
 .ctrl-btn {
@@ -296,15 +296,15 @@ button:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  min-height: 68px;
-  border-radius: 20px;
+  gap: 2px;
+  min-height: 54px;
+  border-radius: 16px;
   background: var(--surface);
   color: var(--text-dark);
-  font-size: 0.95rem;
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+  font-size: 0.85rem;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .ctrl-icon {
-  font-size: 1.55rem;
+  font-size: 1.3rem;
 }
