@@ -1,0 +1,306 @@
+:root {
+  --primary: #ff7043;
+  --primary-dark: #e64a19;
+  --secondary: #29b6f6;
+  --green: #4caf50;
+  --surface: rgba(255, 255, 255, 0.94);
+  --text-dark: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Nunito", "Segoe UI", system-ui, sans-serif;
+  background: #81d4fa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* LANDING SCREEN */
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(180deg, #4fc3f7 0%, #b3e5fc 55%, #81c784 55%, #66bb6a 100%);
+}
+
+.landing-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border-radius: 28px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.badge {
+  display: inline-block;
+  background: #fff3e0;
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.landing-card h1 {
+  margin: 0 0 10px;
+  font-size: 2.3rem;
+  color: var(--primary-dark);
+  letter-spacing: 1px;
+}
+
+.landing-card p {
+  margin: 0 0 24px;
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.landing-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  transition: transform 0.12s ease;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 0 var(--primary-dark);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 5px 0 #0288d1;
+}
+
+.btn-xl {
+  padding: 18px 24px;
+  font-size: 1.35rem;
+}
+
+.btn-lg {
+  padding: 14px 20px;
+  font-size: 1.1rem;
+}
+
+/* MODAL PANDUAN */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: var(--primary-dark);
+}
+
+.guide-list {
+  padding-left: 20px;
+  line-height: 1.65;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+/* HUD AR OVERLAY */
+#ar-hud {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.status-pill {
+  background: rgba(17, 24, 39, 0.78);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.status-pill.detected {
+  background: rgba(46, 125, 50, 0.92);
+}
+
+/* PARENTAL GATE (TAHAN 3 DETIK) */
+.parental-btn {
+  position: relative;
+  overflow: hidden;
+  background: rgba(17, 24, 39, 0.78);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.parental-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: #ef5350;
+  z-index: 0;
+}
+
+.parental-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* SCAN FRAME */
+.scan-frame {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan-box {
+  position: relative;
+  width: min(72vw, 310px);
+  height: min(92vw, 390px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 18px;
+}
+
+.corner {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 5px solid #ffeb3b;
+}
+
+.corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; border-radius: 12px 0 0 0; }
+.corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; border-radius: 0 12px 0 0; }
+.corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; border-radius: 0 0 0 12px; }
+.corner.br { bottom: 0; right: 0; border-left: none; border-top: none; border-radius: 0 0 12px 0; }
+
+.scan-hint {
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* TAP FEEDBACK TOAST */
+.tap-toast {
+  align-self: center;
+  background: #ffeb3b;
+  color: #1f2937;
+  font-weight: 900;
+  font-size: 1.15rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+
+/* SUBTITLE PANEL (FR-08) */
+.subtitle-panel {
+  pointer-events: auto;
+  background: rgba(17, 24, 39, 0.88);
+  color: #fff;
+  border: 3px solid #ffca28;
+  border-radius: 20px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.subtitle-panel p {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+/* BOTTOM CONTROLS (FR-05) */
+.hud-controls {
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ctrl-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 68px;
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ctrl-icon {
+  font-size: 1.55rem;
+}

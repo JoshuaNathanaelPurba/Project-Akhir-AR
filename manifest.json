@@ -1,0 +1,10 @@
+{
+  "name": "CERIA-AR Buku Cerita Interaktif",
+  "short_name": "CERIA-AR",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#4fc3f7",
+  "theme_color": "#4caf50",
+  "description": "Aplikasi WebAR buku cerita interaktif berbasis MindAR untuk balita."
+}
