@@ -20,7 +20,11 @@ html, body {
   height: 100%;
   overflow: hidden;
   font-family: "Nunito", "Segoe UI", system-ui, sans-serif;
-  background: #81d4fa;
+  background: transparent !important;
+}
+
+a-scene, .a-canvas {
+  background: transparent !important;
 }
 
 .hidden {
